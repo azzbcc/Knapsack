@@ -1,0 +1,5 @@
+SET(SOURCE_FILES main.c)
+
+ADD_EXECUTABLE(project_1_3 ${SOURCE_FILES})
+
+TARGET_LINK_LIBRARIES(project_1_3 common)
