@@ -24,3 +24,11 @@ void zeroOnePack(int *f, int c, int w, int v)
         f[i] = max(f[i], f[i - c] + w);
     }
 }
+
+void completePack(int *f, int c, int w, int v)
+{
+    for (int i = c; i <= v; ++i)
+    {
+        f[i] = max(f[i], f[i - c] + w);
+    }
+}
