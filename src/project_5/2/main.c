@@ -1,5 +1,5 @@
 /*
- * 之多取U件
+ * 至多取U件
  */
 
 #include <common.h>
