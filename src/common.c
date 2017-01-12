@@ -1,5 +1,10 @@
 #include <common.h>
 
+int min(int a, int b)
+{
+    return a < b ? a : b;
+}
+
 int max(int a, int b)
 {
     return a > b ? a : b;
@@ -31,4 +36,23 @@ void completePack(int *f, int c, int w, int v)
     {
         f[i] = max(f[i], f[i - c] + w);
     }
+}
+
+void multiplePack(int *f, int c, int w, int m, int v)
+{
+    // 当数量×占用空间不小于容量时，可以看作完全背包问题
+    if (c * m >= v)
+    {
+        completePack(f, c, w, v);
+        return;
+    }
+
+    int k = 1;
+    while (k < m)
+    {
+        zeroOnePack(f, k * c, k * w, v);
+        m -= k;
+        k *= 2;
+    }
+    zeroOnePack(f, m * c, m * w, v);
 }
